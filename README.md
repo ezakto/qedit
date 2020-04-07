@@ -1,5 +1,7 @@
-# Qedit
-Small web code editor
+<p align="center">
+  <img src="https://ezakto.github.io/qedit/logo_e.png" alt="Qedit" width="200"><br>
+  Instant, small, and flexible code snippets editor
+</p>
 
 ## Install
 
