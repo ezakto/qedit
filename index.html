@@ -9,13 +9,13 @@
     <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700&display=swap" rel="stylesheet">
 
     <!-- Qedit basic styles -->
-    <link rel="stylesheet" href="../lib/qedit.css">
+    <link rel="stylesheet" href="//unpkg.com/qedit@0.1.0/lib/qedit.css">
 
     <!-- Prism.js theme -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css">
 
     <!-- Highlight.js theme-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/mono-blue.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
 
     <!-- Prettify theme-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
@@ -31,8 +31,37 @@
             margin: 0 auto;
         }
 
+        h1 {
+            margin-top: 100px;
+            height: 100px;
+            background: url(../logo_e.png) 50% 0% / 100px no-repeat;
+            line-height: 0px;
+            font-size: 0px;
+        }
+
         section {
             margin: 100px 0;
+        }
+        
+        small {
+            display: block;
+            text-align: right;
+        }
+
+        a {
+            color: #444;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0 5px;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            color: #111;
+        }
+
+        .intro {
+            text-align: center;
         }
 
         .qedit {
@@ -54,6 +83,7 @@
         .qedit .qedit-line-numbers {
             font-size: 0.8em;
             padding: 20px 0;
+            opacity: 0.6;
         }
 
         .qedit .qedit-character-highlight {
@@ -66,6 +96,11 @@
 <body>
 
 <div id="wrapper">
+    <h1>Qedit</h1>
+    <section class="intro">
+        <p>Instant, small, and flexible code snippets editor</p>
+        <a href="https://github.com/ezakto/qedit">View in Github</a>
+    </section>
     <section>
         <h2>Vanilla Qedit</h2>
         <div class="qedit" id="vanilla">
@@ -93,6 +128,7 @@ Qedit.create(container, {
   render: QeditPrism,
 });</code></pre>
         </div>
+        <small>theme: prism</small>
     </section>
 
     <section>
@@ -109,6 +145,7 @@ Qedit.create(container, {
   render: QeditHljs,
 });</code></pre>
         </div>
+        <small>theme: default</small>
     </section>
 
     <section>
@@ -125,23 +162,24 @@ Qedit.create(container, {
   render: QeditPrettify,
 });</code></pre>
         </div>
+        <small>theme: prettify</small>
     </section>
 </div>
 
-<script src="../lib/qedit.js"></script>
+<script src="//unpkg.com/qedit@0.1.0/lib/qedit.js"></script>
 
 <!-- Prism.js library and Qedit plugin -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-javascript.min.js"></script>
-<script src="../lib/plugins/prism.js"></script>
+<script src="//unpkg.com/qedit@0.1.0/lib/plugins/prism.js"></script>
 
 <!-- Highlight.js library and Qedit plugin -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-<script src="../lib/plugins/hljs.js"></script>
+<script src="//unpkg.com/qedit@0.1.0/lib/plugins/hljs.js"></script>
 
 <!-- Code Prettify library and Qedit plugin -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-<script src="../lib/plugins/prettify.js"></script>
+<script src="//unpkg.com/qedit@0.1.0/lib/plugins/prettify.js"></script>
 
 <script>
     Qedit.create(document.getElementById('vanilla'), {
