@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Qedit</title>
+    <meta name="description" content="Qedit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto+Slab:400,700|Roboto:400,400i,700,900&display=swap" rel="stylesheet">
+
+    <!-- Qedit basic styles -->
+    <link rel="stylesheet" href="../lib/qedit.css">
+
+    <!-- Prism.js theme -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css">
+
+    <!-- Highlight.js theme-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/mono-blue.min.css">
+
+    <!-- Prettify theme-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+
+    <!-- Demo page styles -->
+    <style>
+        body {
+            font-family: Roboto;
+        }
+
+        #wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin: 100px 0;
+        }
+
+        .qedit {
+            border: 1px solid #bbb;
+            background: #f8f8ff;
+        }
+
+        .qedit pre,
+        .qedit code,
+        .qedit textarea {
+            font-family: Roboto Mono;
+        }
+
+        .qedit pre,
+        .qedit textarea {
+            padding: 20px;
+        }
+
+        .qedit .qedit-line-numbers {
+            font-size: 0.8em;
+            padding: 20px 0;
+        }
+
+        .qedit .qedit-character-highlight {
+            top: 20px;
+            left: 20px;
+            outline-color: #999;
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+    <section>
+        <h2>Vanilla Qedit</h2>
+        <div class="qedit" id="vanilla">
+            <pre><code>import Qedit from 'qedit';
+
+const container = document.getElementById('vanilla');
+
+Qedit.create(container, {
+  showLineNumbers: true,
+});</code></pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>With Prism.js</h2>
+        <div class="qedit" id="prismjs">
+            <pre><code>import Qedit from 'qedit';
+import QeditPrism from 'qedit/plugins/prism';
+
+const container = document.getElementById('prismjs');
+
+Qedit.create(container, {
+  language: 'javascript',
+  showLineNumbers: true,
+  render: QeditPrism,
+});</code></pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>With Highlight.js</h2>
+        <div class="qedit" id="highlightjs">
+            <pre><code>import Qedit from 'qedit';
+import QeditHljs from 'qedit/plugins/hljs';
+
+const container = document.getElementById('hljs');
+
+Qedit.create(container, {
+  language: 'javascript',
+  showLineNumbers: true,
+  render: QeditHljs,
+});</code></pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>With Code Prettify</h2>
+        <div class="qedit" id="codeprettify">
+            <pre><code>import Qedit from 'qedit';
+import QeditPrettify from 'qedit/plugins/prettify';
+
+const container = document.getElementById('prettify');
+
+Qedit.create(container, {
+  language: 'javascript',
+  showLineNumbers: true,
+  render: QeditPrettify,
+});</code></pre>
+        </div>
+    </section>
+</div>
+
+<script src="../lib/qedit.js"></script>
+
+<!-- Prism.js library and Qedit plugin -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-javascript.min.js"></script>
+<script src="../lib/plugins/prism.js"></script>
+
+<!-- Highlight.js library and Qedit plugin -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="../lib/plugins/hljs.js"></script>
+
+<!-- Code Prettify library and Qedit plugin -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+<script src="../lib/plugins/prettify.js"></script>
+
+<script>
+    Qedit.create(document.getElementById('vanilla'), {
+        showLineNumbers: true,
+    });
+
+    Qedit.create(document.getElementById('prismjs'), {
+        language: 'javascript',
+        showLineNumbers: true,
+        render: QeditPrism,
+    });
+
+    Qedit.create(document.getElementById('highlightjs'), {
+        language: 'javascript',
+        showLineNumbers: true,
+        render: QeditHljs,
+    });
+
+    Qedit.create(document.getElementById('codeprettify'), {
+        language: 'js',
+        showLineNumbers: true,
+        render: QeditPrettify,
+    });
+</script>
+
+</body>
+</html>

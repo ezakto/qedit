@@ -96,7 +96,7 @@ Qedit.create(null, {
   pairOpen: ['{', '(', '['], // pairs to highlight
   pairClose: ['}', ')', ']'], // matching pair in same order as in pairOpen
   autoPairs: { '{': '}', '(': ')', '[': ']', '<': '>', '"': '"', "'": "'" }, // pairs to automatically insert
-  showLineNumbers: false, // wheter to show line numbers or not
+  showLineNumbers: false, // whether to show line numbers or not
   render: (code, el) => { el.textContent = code + '\u200B' }, // rendering function
 });
 ```
