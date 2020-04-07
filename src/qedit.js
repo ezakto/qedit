@@ -8,7 +8,6 @@ const defaultOptions = {
   autoPairs: { '{': '}', '(': ')', '[': ']', '<': '>', '"': '"', "'": "'" },
   showLineNumbers: false,
   highlightBracketPairs: true,
-  plugins: [],
   render: (code, el) => {
     el.textContent = code + '\u200B';
   },
