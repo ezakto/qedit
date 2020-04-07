@@ -1,0 +1,31 @@
+{
+  "name": "qedit",
+  "version": "0.1.0",
+  "description": "Small web code editor",
+  "main": "lib/qedit.js",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -w -c",
+    "prepare": "npm run-script build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezakto/qedit.git"
+  },
+  "keywords": [
+    "code",
+    "editor",
+    "highlight",
+    "browser"
+  ],
+  "author": "Nicolás Arias",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ezakto/qedit/issues"
+  },
+  "homepage": "https://github.com/ezakto/qedit#readme",
+  "devDependencies": {
+    "rollup": "^2.3.3",
+    "rollup-plugin-terser": "^5.3.0"
+  }
+}

@@ -1,0 +1,80 @@
+.qedit {
+  position: relative;
+  font-size: 16px;
+  line-height: 1em;
+}
+
+.qedit pre,
+.qedit code,
+.qedit textarea {
+	font-family: monospace;
+	font-size: inherit;
+	line-height: inherit;
+	white-space: pre;
+	background: none;
+	overflow: hidden;
+}
+
+.qedit pre,
+.qedit textarea {
+	display: block;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+.qedit[data-show-line-numbers] pre,
+.qedit[data-show-line-numbers] textarea {
+	padding-left: 40px;
+}
+
+.qedit pre {
+	z-index: 3;
+	pointer-events: none;
+	background: none;
+}
+
+.qedit textarea {
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	color: rgba(0, 0, 0, 0);
+  caret-color: #000;
+  resize: none;
+}
+
+.qedit .qedit-line-numbers {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 30px;
+	white-space: pre;
+	text-align: right;
+	user-select: none;
+  pointer-events: none;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.qedit .qedit-line-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.qedit .qedit-character-highlight {
+	position: absolute;
+	top: 0;
+	left: 0;
+	outline: 1px solid rgba(200, 200, 200, .5);
+	visibility: hidden;
+}
+
+.qedit[data-show-line-numbers] .qedit-character-highlight {
+	left: 40px;
+}
