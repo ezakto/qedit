@@ -1,6 +1,7 @@
 <p align="center">
   <img src="https://ezakto.github.io/qedit/logo_e.png" alt="Qedit" width="200"><br>
-  Instant, small, and flexible code snippets editor
+  Instant, small, and flexible code snippets editor<br>
+  <img src="https://user-images.githubusercontent.com/778104/79702633-d176c980-827c-11ea-87b0-f098e304e50b.gif" alt="Preview">
 </p>
 
 ## Install
