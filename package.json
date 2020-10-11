@@ -1,6 +1,6 @@
 {
   "name": "qedit",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Small web code editor",
   "main": "lib/qedit.js",
   "scripts": {
