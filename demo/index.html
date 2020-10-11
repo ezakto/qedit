@@ -126,6 +126,23 @@ Qedit.create(container, {
 });</code></pre>
         </div>
     </section>
+
+    <section>
+        <h2>With Prism.js + Prettier (Ctrl+Enter)</h2>
+        <div class="qedit" id="codeprettify">
+            <pre><code>import Qedit from 'qedit';
+import QeditPrism from 'qedit/plugins/prism';
+import QeditPrettier from 'qedit/plugins/prettier';
+
+const container = document.getElementById('prettier')
+
+Qedit.create(container,
+{
+  language: 'javascript', showLineNumbers: true,
+  render: QeditPrism, plugins: [ QeditPrettier() ],
+})</code></pre>
+        </div>
+    </section>
 </div>
 
 <script src="../lib/qedit.js"></script>
@@ -142,6 +159,11 @@ Qedit.create(container, {
 <!-- Code Prettify library and Qedit plugin -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
 <script src="../lib/plugins/prettify.js"></script>
+
+<!-- Prettier library and Qedit plugin -->
+<script src="//unpkg.com/prettier@2.1.2/standalone.js"></script>
+<script src="//unpkg.com/prettier@2.1.2/parser-babel.js"></script>
+<script src="../lib/plugins/prettier.js"></script>
 
 <script>
     Qedit.create(document.getElementById('vanilla'), {
@@ -164,6 +186,13 @@ Qedit.create(container, {
         language: 'js',
         showLineNumbers: true,
         render: QeditPrettify,
+    });
+
+    Qedit.create(document.getElementById('prettier'), {
+        language: 'js',
+        showLineNumbers: true,
+        render: QeditPrism,
+        plugins: [QeditPrettier()],
     });
 </script>
 

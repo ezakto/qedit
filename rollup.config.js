@@ -46,5 +46,16 @@ export default [
     },
     external: ['code-prettify'],
     plugins,
+  },
+  {
+    input: 'src/plugins/prettier.js',
+    output: {
+      format: 'umd',
+      file: 'lib/plugins/prettier.js',
+      name: 'QeditPrettier',
+      globals: { 'prettier/standalone': 'prettier', 'prettier/parser-babel': 'prettierPlugins.babel' }
+    },
+    external: ['prettier/standalone', 'prettier/parser-babel'],
+    plugins,
   }
 ];

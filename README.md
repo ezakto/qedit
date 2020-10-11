@@ -86,6 +86,35 @@ Qedit.create(document.querySelector('.qedit'), {
 
 Don't forget to `npm install code-prettify` or include it in a script tag.
 
+### Plugins
+
+Qedit plugins are simply defined as functions called on editor initialization with the editor instance as only argument. Plugins are listed in the `plugins` array of the options param.
+
+#### Prettier
+
+Currently the only plugin shipped with the library:
+
+```js
+import Qedit from 'qedit';
+import QeditPrettier from 'qedit/plugins/prettier';
+
+Qedit.create(document.querySelector('.qedit'), {
+  plugins: [QeditPrettier()],
+});
+```
+
+Optionally, you can configure the plugin passing an options object. The defaults are:
+
+```js
+  plugins: [QeditPrettier({
+    trigger: 'ctrl+enter',
+    formatOnInit: false,
+    prettierOptions: { parser: 'babel' },
+  })],
+```
+
+Don't forget to `npm install prettier` or include it in a script tag (along with `prettier/parser-babel` if you use the default behavior).
+
 ## Options and defaults
 
 ```js
@@ -99,6 +128,7 @@ Qedit.create(null, {
   pairClose: ['}', ')', ']'], // matching pair in same order as in pairOpen
   autoPairs: { '{': '}', '(': ')', '[': ']', '<': '>', '"': '"', "'": "'" }, // pairs to automatically insert
   showLineNumbers: false, // whether to show line numbers or not
+  plugins: [], // List of plugins
   render: (code, el) => { el.textContent = code + '\u200B' }, // rendering function
 });
 ```
