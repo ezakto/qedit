@@ -1,7 +1,9 @@
 import { terser } from 'rollup-plugin-terser';
 
+const production = !process.env.ROLLUP_WATCH;
+
 const plugins = [
-  terser(),
+  production && terser(),
 ];
 
 export default [
