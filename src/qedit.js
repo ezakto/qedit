@@ -446,8 +446,17 @@ function create(block = null, opts = {}) {
     getValue() {
       return textarea.value;
     },
-    setValue(value) {
-      textarea.value = value;
+    setValue(value, selectionStart = 0, selectionEnd = 0, undo = true) {
+      if (undo) {
+        addUndo({
+          text: textarea.value,
+          selectionStart: textarea.selectionStart,
+          selectionEnd: textarea.selectionEnd,
+        });
+      }
+
+      setTextareaState(textarea, value, selectionStart, selectionEnd);
+
       render();
     },
     destroy() {
