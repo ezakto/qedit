@@ -8,6 +8,7 @@ const defaultOptions = {
   autoPairs: { '{': '}', '(': ')', '[': ']', '<': '>', '"': '"', "'": "'" },
   showLineNumbers: false,
   highlightBracketPairs: true,
+  plugins: [],
   render: (code, el) => {
     el.textContent = code + '\u200B';
   },
@@ -439,9 +440,7 @@ function create(block = null, opts = {}) {
     render();
   });
 
-  render();
-
-  return {
+  const editor = {
     el: block,
     textarea,
     getValue() {
@@ -455,6 +454,14 @@ function create(block = null, opts = {}) {
       inserts.concat(textarea).forEach(block.removeChild, block);
     },
   };
+
+  options.plugins.forEach(plugin => {
+    plugin(editor);
+  });
+
+  render();
+
+  return editor;
 }
 
 export default {
